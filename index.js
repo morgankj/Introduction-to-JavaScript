@@ -230,8 +230,6 @@ function annoyingSong(startingNum){
   }
 }
 
-console.log(annoyingSong(5));
-
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
 //Grade Calculator
@@ -273,12 +271,18 @@ HINT - you may need to study tomorrow's content on arrays
 HINT - try looking up the .includes() method
 */
 
+const vowels = ['a', 'e', 'i', 'o', 'u'];
 
-function vowelCounter(/*add your code here*/) {
-  /*add your code here*/
+function vowelCounter(userString) {
+  let lc = userString.toLowerCase();
+  const array = lc.split("");
+  let vowelArray = array.filter(character => {
+    if (vowels.includes(character)){
+      return character;
+    }
+  })
+  return vowelArray.length;
 }
-
-
 
 /*🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑*/
 function foo(){
