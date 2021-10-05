@@ -19,8 +19,10 @@ Do the following:
 
    HINT: no function required
 */
-
-
+const votingAge = 16;
+if (votingAge >= 18){
+  console.log(true);
+}
 
 /*
 Task 1b - Values
@@ -32,10 +34,13 @@ Do the following:
 
    HINT: no function required
 */
+let first = 23;
+let second = 17;
 
-
-
-
+if (second > first){
+  first += second;
+  console.log(first);
+}
 
 /*
 Task 1c - Convert Strings to Numbers
@@ -47,9 +52,9 @@ Do the following:
 
    HINT: look up the Number method
 */
-
-
-
+let word = "1999";
+let converter = Number(word);
+console.log(converter);
 
 /*
 Task 1d - Multiply
@@ -60,11 +65,11 @@ Do the following:
    3. Multiply a and b and return the answer
 */
 
-function multiply(/*add your code here*/){
-  /*add your code here*/
+function multiply(a, b){
+  return a * b;
 }
 
-
+console.log(multiply(5, 8));
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -76,11 +81,11 @@ Do the following:
  3. Return the newly calculated age
 */
 
-function dogYears(/*add your code here*/){
-  /*add your code here*/
+function dogYears(humanYears){
+  return humanYears * 7;
 }
 
-
+console.log("dog years:", dogYears(10));
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -104,7 +109,7 @@ Adult Dogs 1 year and older
 Puppies less than 1 year
    2 - 4 months 10% of their body weight
    4 - 7 months 5% of their body weight 
-   7 - 12 months 4% of their body weight
+   8 - 12 months 4% of their body weight
   
 NOTE: If done correctly, a weight of 15 lbs and age of 1 year would return 0.44999999999999996
 */  
@@ -115,12 +120,12 @@ function hungryDog(weight, age){
   } else if (age >= 1 && weight >= 6 && weight <= 10){
     return weight * 0.04;
   } else if (age >= 1 && weight >= 11 && weight <= 15){
-    return weight * 1.13;
+    return weight * 0.03;
   } else if (age >= 1 && weight > 15){
     return weight * 0.02;
   } else if (age < 1 && age >= 0.583){
     return weight * 0.04;
-  } else if (age < 0.0583 && age >= 0.333){
+  } else if (age < 0.583 && age >= 0.333){
     return weight * 0.05;
   } else if (age < 0.333){
     return weight * 0.1;
@@ -148,15 +153,40 @@ Use the game function below to do the following:
  - tie should return "it's a tie"
 
 RULES OF THE GAME: Scissors beats Paper | Paper beats Rock | Rock beats Scissors | Or there's a tie
-
+Rock=0    paper=1    scissors=2
 HINT: Remember that the order in which we pass in our arguments matters when it comes to parameters
 */
-
+const computer = Math.floor(Math.random() * 3);
 function game(user, computer){
-  /*add your code here*/
+  console.log(`You chose :${user} and the computer chose:${computer}`)
+  if (user === "rock"){
+    if (computer === 0){
+      return "it's a tie";
+    } else if (computer === 1){
+      return "you lose!";
+    } else {
+      return "you win!";
+    }
+  } else if (user === "paper"){
+    if (computer === 0){
+      return "you win!";
+    } else if (computer === 1){
+      return "it's a tie";
+    } else {
+      return "it's a tie";
+    }
+  } else {
+    if (computer === 0){
+      return "you lose!";
+    } else if (computer === 1){
+      return "you win!";
+    } else {
+      return "you lose!";
+    }
+  }
 }
 
-
+game("scissors", computer);
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
